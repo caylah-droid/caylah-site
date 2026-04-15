@@ -614,7 +614,10 @@
     font-size: 0.9rem;
     color: rgba(245,242,238,0.8);
   }
-
+.contact-detail-value a {
+  color: var(--kendwa);   /* or use inherit if you want subtle */
+  text-decoration: none;
+}
   .contact-right {
     display: flex;
     flex-direction: column;
@@ -1246,19 +1249,23 @@
     <h2 class="section-title" style="margin-bottom:2.5rem;">Let's <em>connect</em></h2>
 
     <div class="contact-detail">
-      <div class="contact-detail-label">Email</div>
-      <div class="contact-detail-value"><a <a href="mailto:caylah.sebba@gmail.com?subject=Opportunity Inquiry">
-  caylah.sebba@gmail.com
-</a></div>
-    </div>
-    <div class="contact-detail">
-      <div class="contact-detail-label">Phone</div>
-      <div class="contact-detail-value">+27 81 422 3888</div>
-    </div>
-    <div class="contact-detail">
-      <div class="contact-detail-label">Location</div>
-      <div class="contact-detail-value">Johannesburg, South Africa</div>
-    </div>
+  <div class="contact-detail-label">Email</div>
+  <div class="contact-detail-value">
+    <a href="mailto:caylah.sebba@gmail.com?subject=Opportunity Inquiry">
+      caylah.sebba@gmail.com
+    </a>
+  </div>
+</div>
+
+<div class="contact-detail">
+  <div class="contact-detail-label">Phone</div>
+  <div class="contact-detail-value">+27 81 422 3888</div>
+</div>
+
+<div class="contact-detail">
+  <div class="contact-detail-label">Location</div>
+  <div class="contact-detail-value">Johannesburg, South Africa</div>
+</div>
     <div class="contact-detail">
       <div class="contact-detail-label">LinkedIn</div>
       <div class="contact-detail-value" style="color:var(----pearl-white);">linkedin.com/in/caylah-sebba</div>
