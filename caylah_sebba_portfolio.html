@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caylah Claire Sebba — Business Operator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --eye-blue: #1A2744;
+    --ocean-blue: #4A7FA8;
+    --abalone: #7BA7BC;
+    --kendwa: #00C8C0;
+    --deep-pearl: #C8DFF0;
+    --ink: #04090F;
+    --surface: #0a1520;
+    --mid: #1e3048;
+    --pearl-white: #FDF8FF;
+    --light-rule: rgba(123,167,188,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--pearl-white);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(4,9,15,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--light-rule);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--abalone);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.4rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: var(--abalone);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--kendwa); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem 4rem 6rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--eye-blue);
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 6vw, 5.4rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--pearl-white);
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--abalone);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--kendwa);
+    margin-bottom: 2.4rem;
+  }
+
+  .hero-summary {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: rgba(245,242,238,0.72);
+    max-width: 42ch;
+    margin-bottom: 3rem;
+  }
+
+  .hero-framework {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 3.2rem;
+  }
+
+  .fw-step {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--abalone);
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--light-rule);
+    white-space: nowrap;
+  }
+
+  .fw-arrow {
+    font-size: 0.65rem;
+    color: var(--eye-blue);
+    padding: 0 0.3rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.9rem 2rem;
+    background: var(--eye-blue);
+    color: var(--ink);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.25s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--ocean-blue); color: #fff; }
+
+  .btn-ghost {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.9rem 2rem;
+    background: transparent;
+    color: var(--abalone);
+    border: 1px solid var(--abalone);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { background: var(--abalone); color: var(--ink); }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(74,127,168,0.08) 0%, transparent 60%),
+      linear-gradient(225deg, rgba(123,167,188,0.06) 0%, transparent 50%);
+  }
+
+  .hero-accent-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, var(--eye-blue), transparent);
+    opacity: 0.3;
+  }
+
+  .hero-stat-stack {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--abalone);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,242,238,0.45);
+    margin-top: 0.3rem;
+  }
+
+  .hero-stat-divider {
+    width: 1px;
+    height: 3rem;
+    background: var(--light-rule);
+    margin: 0 auto;
+  }
+
+  /* ─── SECTION BASE ─── */
+  section {
+    padding: 7rem 5rem;
+    position: relative;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    color: var(--kendwa);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--pearl-white);
+    margin-bottom: 3.5rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--abalone);
+  }
+
+  .rule {
+    width: 100%;
+    height: 1px;
+    background: var(--light-rule);
+    margin: 7rem 0 0;
+  }
+
+  /* ─── EXPERTISE GRID ─── */
+  .expertise-section {
+    background: var(--surface);
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--light-rule);
+    border: 1px solid var(--light-rule);
+  }
+
+  .expertise-cell {
+    background: var(--surface);
+    padding: 2.4rem;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .expertise-cell:hover { background: rgba(74,127,168,0.1); }
+
+  .expertise-cell-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--kendwa);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.2rem;
+    opacity: 0.8;
+  }
+
+  .expertise-cell-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--pearl-white);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .expertise-cell-text {
+    font-size: 0.8rem;
+    color: rgba(245,242,238,0.55);
+    line-height: 1.7;
+  }
+
+  /* ─── PROJECTS ─── */
+  .projects-section { background: var(--ink); }
+
+  .project-block {
+    margin-bottom: 6rem;
+    border-top: 1px solid var(--light-rule);
+    padding-top: 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .project-block:last-child { margin-bottom: 0; }
+
+  .project-meta {}
+
+  .project-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--kendwa);
+    margin-bottom: 0.8rem;
+  }
+
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--pearl-white);
+    margin-bottom: 0.6rem;
+  }
+
+  .project-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--abalone);
+    margin-bottom: 1.8rem;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    line-height: 1.85;
+    color: rgba(245,242,238,0.68);
+    margin-bottom: 2rem;
+  }
+
+  .project-outcomes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .outcome {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 0.8rem;
+    color: rgba(245,242,238,0.7);
+    line-height: 1.5;
+  }
+
+  .outcome::before {
+    content: '→';
+    color: var(--ocean-blue);
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--light-rule);
+    color: var(--abalone);
+  }
+
+  .project-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .screen-mockup {
+    background: var(--surface);
+    border: 1px solid var(--light-rule);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .screen-bar {
+    background: rgba(74,127,168,0.12);
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .screen-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--eye-blue);
+    opacity: 0.5;
+  }
+
+  .screen-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    color: rgba(245,242,238,0.3);
+    margin-left: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .screen-body {
+    padding: 1.6rem;
+  }
+
+  .screen-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .screen-card {
+    background: rgba(74,127,168,0.1);
+    border: 1px solid rgba(74,127,168,0.15);
+    padding: 0.7rem;
+  }
+
+  .screen-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--ocean-blue);
+    line-height: 1;
+  }
+
+  .screen-card-lbl {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.48rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,242,238,0.35);
+    margin-top: 0.25rem;
+  }
+
+  .screen-list-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(91,141,184,0.07);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.52rem;
+    color: rgba(245,242,238,0.45);
+  }
+
+  .pill {
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.45rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .pill-green { background: rgba(0,200,192,0.15); color: var(--kendwa); }
+  .pill-blue  { background: rgba(74,127,168,0.2);  color: var(--abalone); }
+  .pill-amber { background: rgba(200,223,240,0.15); color: var(--deep-pearl); }
+
+  .code-block {
+    background: #02060b;
+    border: 1px solid var(--light-rule);
+    padding: 1.2rem 1.4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    line-height: 1.8;
+    color: rgba(253,248,255,0.5);
+    overflow: hidden;
+  }
+
+  .code-kw  { color: #4A7FA8; }
+  .code-fn  { color: #7BA7BC; }
+  .code-str { color: #00C8C0; }
+  .code-cm  { color: rgba(253,248,255,0.25); font-style: italic; }
+
+  /* ─── TOOLS ─── */
+  .tools-section {
+    background: var(--surface);
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .tool-group {}
+
+  .tool-group-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--eye-blue);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--light-rule);
+  }
+
+  .tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tool-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: rgba(245,242,238,0.75);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(91,141,184,0.06);
+  }
+
+  .tool-bar {
+    width: 80px;
+    height: 2px;
+    background: rgba(91,141,184,0.15);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .tool-fill {
+    height: 100%;
+    background: var(--ocean-blue);
+    border-radius: 2px;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-section {
+    background: var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    padding: 8rem 5rem;
+  }
+
+  .contact-left {}
+
+  .contact-detail {
+    margin-bottom: 1.8rem;
+  }
+
+  .contact-detail-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--eye-blue);
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-detail-value {
+    font-size: 0.9rem;
+    color: rgba(245,242,238,0.8);
+  }
+
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .equity-note {
+    background: var(--surface);
+    border: 1px solid var(--light-rule);
+    border-left: 3px solid var(--ocean-blue);
+    padding: 1.8rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .equity-note-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--kendwa);
+    margin-bottom: 0.6rem;
+  }
+
+  .equity-note-text {
+    font-size: 0.82rem;
+    color: rgba(245,242,238,0.65);
+    line-height: 1.7;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--deep-pearl);
+    padding: 2rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--light-rule);
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: var(--abalone);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    color: rgba(245,242,238,0.25);
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left > * {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-name    { animation-delay: 0.25s; }
+  .hero-title   { animation-delay: 0.35s; }
+  .hero-summary { animation-delay: 0.45s; }
+  .hero-framework { animation-delay: 0.55s; }
+  .hero-cta     { animation-delay: 0.65s; }
+
+  .hero-stat-stack > * {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+  .hero-stat:nth-child(1) { animation-delay: 0.5s; }
+  .hero-stat-divider:nth-child(2) { animation-delay: 0.6s; }
+  .hero-stat:nth-child(3) { animation-delay: 0.7s; }
+  .hero-stat-divider:nth-child(4) { animation-delay: 0.8s; }
+  .hero-stat:nth-child(5) { animation-delay: 0.9s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.6rem; }
+    .nav-links { gap: 1.4rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 5rem; }
+    .hero-left { padding: 4rem 2rem 2rem; }
+    .hero-right { min-height: 280px; }
+    section { padding: 5rem 2rem; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .project-block { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .contact-section { grid-template-columns: 1fr; padding: 5rem 2rem; }
+    footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">C. C. Sebba</span>
+  <ul class="nav-links">
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#fundamedical">FundaMedical</a></li>
+    <li><a href="#fundaglobal">FundaGlobal</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-left">
+    <span class="hero-eyebrow">Business Operator · Head of Operations · Systems Architect</span>
+    <h1 class="hero-name">Caylah<br><em>Claire Sebba</em></h1>
+    <p class="hero-title">Operations. Systems. Execution.</p>
+    <p class="hero-summary">7+ years building the operational backbone of growing organisations — stepping into complexity, connecting the dots between systems, teams and workflows, and designing scalable solutions that drive real results.</p>
+    <div class="hero-framework">
+      <span class="fw-step">Understand</span>
+      <span class="fw-arrow">→</span>
+      <span class="fw-step">Connect</span>
+      <span class="fw-arrow">→</span>
+      <span class="fw-step">Optimize</span>
+      <span class="fw-arrow">→</span>
+      <span class="fw-step">Execute</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#fundamedical" class="btn-primary">View Projects</a>
+      <a href="#contact" class="btn-ghost">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-accent-line"></div>
+    <div class="hero-stat-stack">
+      <div class="hero-stat">
+        <div class="stat-num">35K+</div>
+        <div class="stat-label">Legal Claims Scaled</div>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <div class="stat-num">150+</div>
+        <div class="stat-label">Staff Managed</div>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <div class="stat-num">2K+</div>
+        <div class="stat-label">Manual Hours Saved / Year</div>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Countries — SA · USA · UK</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise-section" id="expertise">
+  <div class="section-label">Core Competencies</div>
+  <h2 class="section-title">What I <em>bring</em> to an organisation</h2>
+
+  <div class="expertise-grid">
+    <div class="expertise-cell">
+      <div class="expertise-cell-num">01</div>
+      <div class="expertise-cell-title">Operational Strategy &amp; Scaling</div>
+      <div class="expertise-cell-text">Designing systems and structures that hold as organisations grow — from startup to multi-country operations with hundreds of staff and thousands of cases.</div>
+    </div>
+    <div class="expertise-cell">
+      <div class="expertise-cell-num">02</div>
+      <div class="expertise-cell-title">Systems Implementation</div>
+      <div class="expertise-cell-text">Hands-on delivery across SharePoint, Power BI, Zoho One (CRM, Creator, Analytics), .Net architecture design, and custom application builds.</div>
+    </div>
+    <div class="expertise-cell">
+      <div class="expertise-cell-num">03</div>
+      <div class="expertise-cell-title">Data, Reporting &amp; Analytics</div>
+      <div class="expertise-cell-text">Building live reporting infrastructure — from Power BI dashboards and Zoho Analytics to SQL query tables — that translate operational data into leadership insight.</div>
+    </div>
+    <div class="expertise-cell">
+      <div class="expertise-cell-num">04</div>
+      <div class="expertise-cell-title">Process Automation</div>
+      <div class="expertise-cell-text">Python pipelines, OCR, API integrations, and Zoho workflow automations eliminating thousands of manual hours annually across data processing and document handling.</div>
+    </div>
+    <div class="expertise-cell">
+      <div class="expertise-cell-num">05</div>
+      <div class="expertise-cell-title">Business Analysis &amp; Architecture</div>
+      <div class="expertise-cell-text">Full-cycle process mapping, requirements gathering, solutions architecture and implementation strategy — translating business problems into technical solutions.</div>
+    </div>
+    <div class="expertise-cell">
+      <div class="expertise-cell-num">06</div>
+      <div class="expertise-cell-title">Stakeholder Leadership</div>
+      <div class="expertise-cell-text">Managing relationships across 180+ law firms, 100+ medical experts, internal teams of 150+, and international leadership in SA, USA and UK.</div>
+    </div>
+    <div class="expertise-cell">
+      <div class="expertise-cell-num">07</div>
+      <div class="expertise-cell-title">Governance &amp; Compliance</div>
+      <div class="expertise-cell-text">ISO 27001, POPIA, GDPR, HIPAA compliance systems built and managed in production across South African and US operations.</div>
+    </div>
+    <div class="expertise-cell">
+      <div class="expertise-cell-num">08</div>
+      <div class="expertise-cell-title">Team &amp; Department Building</div>
+      <div class="expertise-cell-text">Building departments from scratch, developing SOPs, training programmes, and operational consistency frameworks that support sustainable growth.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT 1: FUNDAMEDICAL -->
+<section class="projects-section" id="fundamedical">
+  <div class="section-label">Project Case Study — FundaMedical · 2020–2023</div>
+  <h2 class="section-title">From Excel chaos<br>to <em>enterprise infrastructure</em></h2>
+
+  <div class="project-block">
+    <div class="project-meta">
+      <div class="project-tag">Phase 01 · SharePoint + Power BI</div>
+      <h3 class="project-title">Digital Operations Platform</h3>
+      <p class="project-subtitle">Migrating a 150-staff, 180-law-firm operation off manual Excel</p>
+      <p class="project-desc">FundaMedical was running an operation of substantial scale through disconnected spreadsheets. As GM/COO, I led the transition to a centralised SharePoint infrastructure — designing the full site architecture, custom views, departmental dashboards, and workflows — then layered Power BI reporting on top to give management live visibility into assessments, reports, and case status.</p>
+      <div class="project-outcomes">
+        <div class="outcome">Designed the full FundaTracking SharePoint site: 40+ list views, department workflows, court calendars, and assessment scheduling</div>
+        <div class="outcome">Built internal Power BI reporting (18 pages) integrating SharePoint lists for real-time KPI tracking</div>
+        <div class="outcome">Created FundaNet V0.1 — external-facing SharePoint portals per law firm and per expert, with live Power BI reporting embedded</div>
+        <div class="outcome">Delivered executive summary views across 180+ attorney firms showing assessments, outstanding reports, case status, and financials</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">SharePoint</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Workflow Design</span>
+        <span class="tag">Executive Reporting</span>
+        <span class="tag">Change Management</span>
+      </div>
+    </div>
+
+    <div class="project-visual">
+      <div class="screen-mockup">
+        <div class="screen-bar">
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <span class="screen-url">sharepoint.com · Funda Tracking Site</span>
+        </div>
+        <div class="screen-body">
+          <div class="screen-row">
+            <div class="screen-card">
+              <div class="screen-card-num">480</div>
+              <div class="screen-card-lbl">Month Assessments</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">431</div>
+              <div class="screen-card-lbl">Month Reports</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">18</div>
+              <div class="screen-card-lbl">BI Pages</div>
+            </div>
+          </div>
+          <div class="screen-list-row"><span>Expert Weekly Schedule</span><span class="pill pill-blue">Live</span></div>
+          <div class="screen-list-row"><span>Court Schedule</span><span class="pill pill-green">Synced</span></div>
+          <div class="screen-list-row"><span>Case Management</span><span class="pill pill-blue">Active</span></div>
+          <div class="screen-list-row"><span>Finance · Debtors / Creditors</span><span class="pill pill-amber">Tracked</span></div>
+          <div class="screen-list-row"><span>Expert Assessment Forms</span><span class="pill pill-green">Ready</span></div>
+        </div>
+      </div>
+
+      <div class="screen-mockup">
+        <div class="screen-bar">
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <span class="screen-url">app.powerbi.com · FundaNet V0.1 — Law Firm Executive Summary</span>
+        </div>
+        <div class="screen-body">
+          <div class="screen-row">
+            <div class="screen-card">
+              <div class="screen-card-num">3,413</div>
+              <div class="screen-card-lbl">All Products</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">2,788</div>
+              <div class="screen-card-lbl">Full Reports</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">1,640</div>
+              <div class="screen-card-lbl">On Hold</div>
+            </div>
+          </div>
+          <div class="screen-list-row"><span>A Wolmarans Inc</span><span class="pill pill-blue">Top Account</span></div>
+          <div class="screen-list-row"><span>Gildenhuis Malatji Attorneys</span><span class="pill pill-green">Active</span></div>
+          <div class="screen-list-row"><span>McMillan</span><span class="pill pill-amber">Review</span></div>
+          <div class="screen-list-row"><span>Kruger &amp; Pottinger</span><span class="pill pill-blue">Active</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-block">
+    <div class="project-meta">
+      <div class="project-tag">Phase 02 · FundaNet Custom .Net Application</div>
+      <h3 class="project-title">Case Management Architecture</h3>
+      <p class="project-subtitle">Defining the architecture and logic for a bespoke .Net platform</p>
+      <p class="project-desc">When SharePoint reached its scaling ceiling, I led the business analysis and architecture definition for FundaNet — a purpose-built .Net case management application. I designed the full data model, workflow logic, UI structure, and external portal architecture. The result was a live system managing thousands of concurrent cases across law firms, medical experts, and internal operations.</p>
+      <div class="project-outcomes">
+        <div class="outcome">Defined complete case lifecycle architecture: intake → assessment → reporting → settlement → payment, with 11-stage progress tracking</div>
+        <div class="outcome">Designed per-law-firm and per-expert external portal pages with embedded live Power BI reporting per client</div>
+        <div class="outcome">Specified multi-product case model supporting RAF claims, assessment scheduling, report delivery, and court-related matters</div>
+        <div class="outcome">Delivered business requirements enabling the dev team to build a production system used across 180+ law firms</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">.Net Architecture</span>
+        <span class="tag">Business Analysis</span>
+        <span class="tag">UI Design</span>
+        <span class="tag">Case Workflows</span>
+        <span class="tag">Client Portals</span>
+      </div>
+    </div>
+
+    <div class="project-visual">
+      <div class="screen-mockup">
+        <div class="screen-bar">
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <span class="screen-url">fundanet.co.za · Case Detail View</span>
+        </div>
+        <div class="screen-body">
+          <div class="screen-list-row" style="font-size:0.55rem;color:rgba(245,242,238,0.6)">
+            <span style="color:var(--abalone)">CASE: MAT16925</span>
+            <span class="pill pill-blue">Progress</span>
+          </div>
+          <div style="margin-top:0.8rem;display:flex;gap:1rem;">
+            <div style="flex:1;">
+              <div class="screen-list-row"><span>Patient Type</span><span style="color:var(--abalone)">RAF Claim</span></div>
+              <div class="screen-list-row"><span>Instructing Firm</span><span style="color:var(--abalone)">A Wolmarans Inc</span></div>
+              <div class="screen-list-row"><span>Account Status</span><span class="pill pill-green">Priority</span></div>
+              <div class="screen-list-row"><span>Assessment Time</span><span style="color:var(--abalone)">8:00 AM</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:0.6rem;align-items:flex-start;font-family:'DM Mono',monospace;font-size:0.5rem;color:rgba(245,242,238,0.4);letter-spacing:0.08em;">
+              <span style="color:var(--kendwa)">● Mandate Lodged</span>
+              <span>● Issued Summons</span>
+              <span style="color:var(--eye-blue)">● Appointed Experts</span>
+              <span>● Assessment Complete</span>
+              <span>● Reports Complete</span>
+              <span>● Settlement Drafted</span>
+              <span>● Applied for Trial</span>
+              <span>● Settled</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT 2: FUNDAGLOBAL -->
+<section class="projects-section" id="fundaglobal" style="background:var(--surface);">
+  <div class="section-label">Project Case Study — FundaGlobal + Advoc8se · 2023–Present</div>
+  <h2 class="section-title">International expansion<br>on <em>Zoho One</em></h2>
+
+  <div class="project-block">
+    <div class="project-meta">
+      <div class="project-tag">Phase 01 · Zoho CRM — Core Case Management</div>
+      <h3 class="project-title">Zoho CRM Build</h3>
+      <p class="project-subtitle">Custom modules, analytics, workflows, and canvas for 30,000+ claims</p>
+      <p class="project-desc">Expanding into the US and UK required a platform meeting US data residency requirements. I led the full Zoho CRM implementation — designing custom modules for litigation, claims, contacts, and communication; building custom analytics dashboards; writing automation workflows in Deluge; and creating Canvas views for case management. From zero to 150+ users across three countries.</p>
+      <div class="project-outcomes">
+        <div class="outcome">Built complete case management CRM: custom Claims module with 11 pipeline stages, multi-territory support (SA/USA/UK), and Tier classification</div>
+        <div class="outcome">Designed Zoho Analytics dashboards tracking questionnaires, calls, appointments, SMSs, and claim funnel per agent over time</div>
+        <div class="outcome">Wrote Deluge functions for automated workflows — 24hr meeting SMS notifications, law firm routing, data validation triggers</div>
+        <div class="outcome">Implemented Zoho Creator compliance management application covering ISO 27001, POPIA, GDPR, HIPAA policy registers and incident tracking</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Zoho CRM</span>
+        <span class="tag">Zoho Analytics</span>
+        <span class="tag">Zoho Creator</span>
+        <span class="tag">Deluge / Workflows</span>
+        <span class="tag">Multi-Country Ops</span>
+      </div>
+    </div>
+
+    <div class="project-visual">
+      <div class="screen-mockup">
+        <div class="screen-bar">
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <span class="screen-url">crm.zoho.com · Welcome Caylah Claire Sebba</span>
+        </div>
+        <div class="screen-body">
+          <div class="screen-row">
+            <div class="screen-card">
+              <div class="screen-card-num">247</div>
+              <div class="screen-card-lbl">Verified / Week</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">263</div>
+              <div class="screen-card-lbl">Questionnaires</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">125</div>
+              <div class="screen-card-lbl">Substantiated</div>
+            </div>
+          </div>
+          <div class="screen-list-row"><span>Claims by Stage · Pipeline</span><span class="pill pill-blue">Live</span></div>
+          <div class="screen-list-row"><span>Questionnaires Completed</span><span class="pill pill-green">263 this week</span></div>
+          <div class="screen-list-row"><span>Proof of Exposure</span><span class="pill pill-amber">132 → 34.9%</span></div>
+          <div class="screen-list-row"><span>Files Uploaded to DON</span><span class="pill pill-blue">2,477</span></div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div><span class="code-cm">// Zoho CRM — 24 Hour Meeting SMS Workflow</span></div>
+        <div><span class="code-kw">void</span> <span class="code-fn">automation_MeetingScheduled</span>(Int Id, String mob, String msg, String Sms) {</div>
+        <div>  <span class="code-kw">for each</span> element <span class="code-kw">in</span> crm.getRecordsById(<span class="code-str">"Events"</span>, Id) {</div>
+        <div>    <span class="code-cm">// Route by law firm → select correct SMS ID</span></div>
+        <div>    <span class="code-kw">if</span>(lcode == <span class="code-str">"TAP"</span> &amp;&amp; acName == <span class="code-str">"Pulaski Kherkher"</span>) {</div>
+        <div>      sla = <span class="code-str">"&lt;TELECOMGROUP&gt;"</span>;</div>
+        <div>    }</div>
+        <div>    <span class="code-fn">data.put</span>(<span class="code-str">"message"</span>, <span class="code-str">"Your claim is set for tomorrow, "</span> + dat + <span class="code-str">" with "</span> + nom);</div>
+        <div>    post (<span class="code-str">"https://zoho.crm.com/send/sms"</span>);</div>
+        <div>  }</div>
+        <div>}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-block">
+    <div class="project-meta">
+      <div class="project-tag">Phase 02 · Zoho Creator — Project-Based Applications</div>
+      <h3 class="project-title">Custom Low-Code Applications</h3>
+      <p class="project-subtitle">5 bespoke apps solving distinct operational problems</p>
+      <p class="project-desc">Beyond the core CRM, I designed and built a suite of project-specific Zoho Creator applications — each solving a unique operational problem with urgency and precision. From compliance management to an urgent finance audit handling 20,000+ cases, to a unique law firm grading system validating 1,471 cases across 7 document categories.</p>
+      <div class="project-outcomes">
+        <div class="outcome">Compliance Management App: 13 active policy registers across ISO 27001, HIPAA, POPIA, GDPR — with incident breach logging and workdrive integration</div>
+        <div class="outcome">Finance Audit App: Managed 19,898 total cases across law firms — tracking 3-phase completion, R147M+ outstanding balance visibility</div>
+        <div class="outcome">Law Firm Case Management App: Per-law-firm portal with 145 opt-out pending confirmation, search by case number, Tier and Class tracking</div>
+        <div class="outcome">Law Firm Grading App: Document validation grader across 1,471 cases — fact sheets, HIPAA, pre-agreements, questionnaires, medical records</div>
+        <div class="outcome">Docket Curing App: Attention attorney ticket resolution for ingested status concern cases with multi-law-firm routing</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Zoho Creator</span>
+        <span class="tag">Compliance (ISO/HIPAA)</span>
+        <span class="tag">Finance Audit</span>
+        <span class="tag">Case Grading</span>
+        <span class="tag">Low-Code</span>
+      </div>
+    </div>
+
+    <div class="project-visual">
+      <div class="screen-mockup">
+        <div class="screen-bar">
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <span class="screen-url">creator.zoho.com · FundaFinance Audit</span>
+        </div>
+        <div class="screen-body">
+          <div class="screen-row">
+            <div class="screen-card">
+              <div class="screen-card-num">19,898</div>
+              <div class="screen-card-lbl">Total Cases</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">21,110</div>
+              <div class="screen-card-lbl">Phase 1 Done</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">4,631</div>
+              <div class="screen-card-lbl">Phase 3 Done</div>
+            </div>
+          </div>
+          <div class="screen-list-row"><span>Total Deposits Outstanding</span><span style="color:var(--eye-blue)">R 4,861,940.33</span></div>
+          <div class="screen-list-row"><span>Total Balance Outstanding</span><span style="color:var(--kendwa)">R 147,795,935.09</span></div>
+          <div class="screen-list-row"><span>Auditor Quality — Correct</span><span class="pill pill-green">17,539 (95.6%)</span></div>
+        </div>
+      </div>
+
+      <div class="screen-mockup">
+        <div class="screen-bar">
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <span class="screen-url">creator.zoho.com · Messina PLLC Grader</span>
+        </div>
+        <div class="screen-body">
+          <div style="font-family:'DM Mono',monospace;font-size:0.6rem;color:rgba(245,242,238,0.5);margin-bottom:0.8rem;letter-spacing:0.08em;">1,471 CASES FOR GRADING</div>
+          <div class="screen-row">
+            <div class="screen-card">
+              <div class="screen-card-num">1,471</div>
+              <div class="screen-card-lbl">Total Cases</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">1,117</div>
+              <div class="screen-card-lbl">Relation Count</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">1,012</div>
+              <div class="screen-card-lbl">HIPAA</div>
+            </div>
+          </div>
+          <div class="screen-list-row"><span>Pre Agreements</span><span style="color:var(--eye-blue)">1,114</span></div>
+          <div class="screen-list-row"><span>Questionnaires</span><span style="color:var(--eye-blue)">1,017</span></div>
+          <div class="screen-list-row"><span>Request Forms</span><span style="color:var(--kendwa)">963</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-block">
+    <div class="project-meta">
+      <div class="project-tag">Phase 03 · Zoho Analytics + SQL + Python</div>
+      <h3 class="project-title">Analytics, Automation &amp; Data Engineering</h3>
+      <p class="project-subtitle">Executive dashboards, complex SQL queries, and Python automation pipelines</p>
+      <p class="project-desc">To unlock deeper operational insight and eliminate high-volume manual processing, I built Zoho Analytics dashboards with complex SQL query tables for regular data submissions, and developed Python automation pipelines in VS Code to handle document processing, OCR extraction, and data transformation at scale — saving 2,000+ manual hours annually.</p>
+      <div class="project-outcomes">
+        <div class="outcome">Zoho Analytics: Built 6+ executive dashboards including the Pulaski Docket Overview (20,257 active claims), EO Values Dashboard ($4,733M EO value), and weekly invoicing dashboards</div>
+        <div class="outcome">SQL: Wrote complex 900+ line query tables for data deficiency scoring, evidence validation, and case completeness across 30,000+ claims</div>
+        <div class="outcome">Python: Built AI_PROJECTS codebase — death certificates, diagnosis pipeline, settlement proposals, Zoho CRM sync, HIPAA validation, SF180 military record processing</div>
+        <div class="outcome">Automation reduced 2,000+ hours of manual data processing annually across document extraction, validation, and reporting</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Zoho Analytics</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Python</span>
+        <span class="tag">OCR / Tesseract</span>
+        <span class="tag">VS Code</span>
+        <span class="tag">GitHub Copilot</span>
+        <span class="tag">LM Studio</span>
+      </div>
+    </div>
+
+    <div class="project-visual">
+      <div class="screen-mockup">
+        <div class="screen-bar">
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <div class="screen-dot"></div>
+          <span class="screen-url">analytics.zoho.com · Pulaski Docket Overview</span>
+        </div>
+        <div class="screen-body">
+          <div style="font-family:'DM Mono',monospace;font-size:0.55rem;color:rgba(245,242,238,0.4);margin-bottom:0.8rem;letter-spacing:0.08em;">PULASKI EXECUTIVE VIEW</div>
+          <div class="screen-row">
+            <div class="screen-card">
+              <div class="screen-card-num">20,257</div>
+              <div class="screen-card-lbl">Active Claims</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">7,948</div>
+              <div class="screen-card-lbl">Med Records</div>
+            </div>
+            <div class="screen-card">
+              <div class="screen-card-num">2,064</div>
+              <div class="screen-card-lbl">Injury Proven</div>
+            </div>
+          </div>
+          <div class="screen-list-row"><span>Rubric Exposure Matches</span><span style="color:var(--eye-blue)">2,312</span></div>
+          <div class="screen-list-row"><span>Database Uploaded to DON</span><span style="color:var(--kendwa)">2,477</span></div>
+          <div class="screen-list-row"><span>Claims Returned to DON</span><span class="pill pill-amber">647</span></div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <div><span class="code-cm">// Python — AI_PROJECTS · diagnosis_pipeline</span></div>
+        <div><span class="code-cm"># death_certificates | settlement_proposal</span></div>
+        <div><span class="code-cm"># zoho_crm | zoho_workdrive | sf180 | hipaa</span></div>
+        <div>&nbsp;</div>
+        <div><span class="code-kw">import</span> <span class="code-fn">aperio</span>, <span class="code-fn">compex</span>, <span class="code-fn">loa</span></div>
+        <div><span class="code-cm"># SF180 military record pipeline</span></div>
+        <div><span class="code-fn">sf180_extract</span>  → <span class="code-fn">sf180_check</span>  → <span class="code-fn">sf180_move</span></div>
+        <div><span class="code-fn">sf180_split</span>   → <span class="code-fn">sf180_results</span> → <span class="code-fn">clj_arc</span></div>
+        <div>&nbsp;</div>
+        <div><span class="code-cm"># HIPAA staging validation</span></div>
+        <div><span class="code-fn">stag_hipaa_check</span> → <span class="code-fn">stag_hipaa_move</span></div>
+        <div><span class="code-fn">stag_hipaa_sig</span>   → <span class="code-fn">stag_hipaa_type</span></div>
+        <div>&nbsp;</div>
+        <div><span class="code-cm"># Compex intake → case file routing</span></div>
+        <div><span class="code-fn">compex_file</span> → <span class="code-fn">compex_move</span> → <span class="code-fn">integritort</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-section" id="tools">
+  <div class="section-label">Technical Stack</div>
+  <h2 class="section-title">Tools I <em>work in</em></h2>
+
+  <div class="tools-grid">
+    <div class="tool-group">
+      <div class="tool-group-label">Systems & Platforms</div>
+      <div class="tool-list">
+        <div class="tool-item">Zoho One (CRM, Creator, Analytics) <div class="tool-bar"><div class="tool-fill" style="width:95%"></div></div></div>
+        <div class="tool-item">SharePoint <div class="tool-bar"><div class="tool-fill" style="width:90%"></div></div></div>
+        <div class="tool-item">Power BI <div class="tool-bar"><div class="tool-fill" style="width:88%"></div></div></div>
+        <div class="tool-item">Microsoft 365 <div class="tool-bar"><div class="tool-fill" style="width:90%"></div></div></div>
+        <div class="tool-item">Google Workspace <div class="tool-bar"><div class="tool-fill" style="width:80%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="tool-group">
+      <div class="tool-group-label">Automation & Development</div>
+      <div class="tool-list">
+        <div class="tool-item">Python (VS Code) <div class="tool-bar"><div class="tool-fill" style="width:82%"></div></div></div>
+        <div class="tool-item">SQL / Zoho Analytics <div class="tool-bar"><div class="tool-fill" style="width:85%"></div></div></div>
+        <div class="tool-item">Deluge (Zoho workflows) <div class="tool-bar"><div class="tool-fill" style="width:88%"></div></div></div>
+        <div class="tool-item">OCR / Tesseract <div class="tool-bar"><div class="tool-fill" style="width:75%"></div></div></div>
+        <div class="tool-item">API Integrations <div class="tool-bar"><div class="tool-fill" style="width:78%"></div></div></div>
+        <div class="tool-item">GitHub Copilot / LM Studio <div class="tool-bar"><div class="tool-fill" style="width:70%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="tool-group">
+      <div class="tool-group-label">Governance & Compliance</div>
+      <div class="tool-list">
+        <div class="tool-item">ISO 27001 <div class="tool-bar"><div class="tool-fill" style="width:90%"></div></div></div>
+        <div class="tool-item">HIPAA (US) <div class="tool-bar"><div class="tool-fill" style="width:88%"></div></div></div>
+        <div class="tool-item">POPIA (SA) <div class="tool-bar"><div class="tool-fill" style="width:92%"></div></div></div>
+        <div class="tool-item">GDPR (UK/EU) <div class="tool-bar"><div class="tool-fill" style="width:82%"></div></div></div>
+        <div class="tool-item">TCPA (US) <div class="tool-bar"><div class="tool-fill" style="width:78%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-left">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title" style="margin-bottom:2.5rem;">Let's <em>connect</em></h2>
+
+    <div class="contact-detail">
+      <div class="contact-detail-label">Email</div>
+      <div class="contact-detail-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1c7f7d65707d74326f797e7e7d5c7b717d7570327f7371">[email&#160;protected]</a></div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-label">Phone</div>
+      <div class="contact-detail-value">+27 81 422 3888</div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-label">Location</div>
+      <div class="contact-detail-value">Johannesburg, South Africa</div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-label">LinkedIn</div>
+      <div class="contact-detail-value" style="color:var(--eye-blue);">linkedin.com/in/caylah-sebba</div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-label">Availability</div>
+      <div class="contact-detail-value" style="color:var(--kendwa);">Open to new opportunities</div>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,242,238,0.65);line-height:1.9;margin-bottom:2rem;">
+      I bring 7+ years of applied operational leadership — not just strategy, but hands-on systems delivery across real organisations at scale. I've been awarded equity in two companies in recognition of that contribution.
+    </div>
+    <div class="equity-note">
+      <div class="equity-note-label">Recognition of Contribution</div>
+      <div class="equity-note-text">Awarded shareholding in <strong style="color:var(--abalone)">FundaGlobal (SA)</strong> and <strong style="color:var(--abalone)">Advoc8se LLC (USA)</strong> in recognition of operational leadership and the role played in building and scaling both companies from early-stage to international operations.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Caylah Claire Sebba — Business O
